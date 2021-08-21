@@ -1,0 +1,5 @@
+@mixin make-container($padding-x, $width) {
+	width: $width;
+	padding-right: $padding-x;
+	padding-left: $padding-x;
+}

@@ -1,0 +1,31 @@
+@mixin intermediate-s {
+	@media (min-width: 420px) {
+		@content;
+	}
+}
+
+@mixin intermediate {
+	@media (min-width: 576px) {
+		@content;
+	}
+}
+@mixin extra-small {
+	@media (min-width: $extra-small) {
+		@content;
+	}
+}
+@mixin small {
+	@media (min-width: $small) {
+		@content;
+	}
+}
+@mixin medium {
+	@media (min-width: $medium) {
+		@content;
+	}
+}
+@mixin large {
+	@media (min-width: $large) {
+		@content;
+	}
+}

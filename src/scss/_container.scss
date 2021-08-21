@@ -1,0 +1,32 @@
+.container {
+	min-width: 320px;
+	padding: 0 20px;
+	margin: 0 auto;
+
+	// intermediate media query
+	@include intermediate-s {
+		@include make-container(40px, 425px);
+	}
+
+	// intermediate media query
+	@include intermediate {
+		@include make-container(40px, 540px);
+	}
+
+	@include extra-small {
+		@include make-container(40px, 720px);
+	}
+
+	@include small {
+		@include make-container(40px, 960px);
+	}
+
+	@include medium {
+		@include make-container(40px, 1140px);
+
+	}
+
+	@include large {
+		@include make-container(25px, 1440px);
+	}
+}

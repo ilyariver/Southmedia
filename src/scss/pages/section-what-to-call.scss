@@ -1,0 +1,109 @@
+.section-what-to-call {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-wrap: wrap;
+	text-transform: uppercase;
+	padding: 10rem 0;
+
+	&__text {
+		display: flex;
+		align-items: center;
+	}
+
+	&__proverb {
+		position: relative;
+		font-size: 2.7rem;
+		line-height: 4rem;
+
+		&--crossOut {
+			&:after {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 0;
+				width: 100%;
+				background-color: $color-white;
+				height: 2px;
+			}
+		}
+
+		&--yellow-italic {
+			font-style: italic;
+			color: $color-gold;
+		}
+
+		&--italic {
+			font-style: italic;
+		}
+	}
+
+	&__image {
+		width: 2.5rem;
+		margin: 0 10px;
+
+		&--not-right {
+			margin: 0 10px 0 0;
+		}
+	}
+
+	&__arrow {
+		margin: 0 5px;
+		min-width: 2.4rem;
+		height: 2rem;
+		background-image: url("../images/big-arrow-right.svg");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 100%;
+	}
+
+	@include intermediate-s {
+		&__proverb {
+			font-size: 28px;
+			line-height: 43px;
+		}
+	}
+
+	@include intermediate {
+		&__proverb {
+			font-size: 1.9rem;
+			line-height: 2.8rem;
+		}
+	}
+
+	@include extra-small {
+		&__proverb {
+			font-size: 2.2rem;
+			line-height: 2.5rem;
+		}
+
+		&__image {
+			width: 2.5rem;
+		}
+	}
+
+	@include large {
+		width: 90%;
+		padding: 240px 0;
+
+		&__proverb {
+			font-size: 105px;
+			line-height: 115px;
+		}
+
+		&__image {
+			width: 130px;
+			margin: 0 20px;
+
+			&--not-right {
+				margin: 0 20px 0 0;
+			}
+		}
+
+		&__arrow {
+			margin: 0 20px;
+			min-width: 128px;
+			height: 72px;
+		}
+	}
+}

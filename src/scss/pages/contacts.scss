@@ -1,0 +1,36 @@
+.contacts {
+	&__phone-number {
+		&--icon {
+			position: relative;
+			&:after {
+				content: "";
+				position: absolute;
+				top: -50%;
+				right: -40%;
+				width: 35px;
+				height: 35px;
+				background-image: url("../images/phone-icon.svg");
+				background-repeat: no-repeat;
+				background-color: $color-gold;
+				background-position: center;
+				background-size: 15px;
+				padding-right: 30px;
+				border-radius: 50%;
+
+			}
+		}
+	}
+
+	@include small {
+		&__phone-number {
+			&--icon {
+				&:after {
+					top: -85%;
+					right: -55%;
+					min-width: 40px;
+					height: 40px;
+				}
+			}
+		}
+	}
+}
