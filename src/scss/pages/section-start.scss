@@ -1,12 +1,19 @@
 .section-start {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 40px 20px 20px;
-	background-image: url("../images/noise.svg");
-	background-color: $color-gray;
-	font-size: 30px;
-	text-transform: uppercase;
+	&__container {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__wrap {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 40px 20px 20px;
+		background-image: url("../images/noise.svg");
+		background-color: $color-gray;
+		font-size: 30px;
+		text-transform: uppercase;
+	}
 
 	&__title {
 		margin: 0;
@@ -58,13 +65,17 @@
 	}
 
 	@include intermediate {
-		width: 75%;
+		&__wrap {
+			width: 75%;
+		}
 	}
 
 	@include extra-small {
-		position: relative;
-		width: 70%;
-		padding: 45px 35px;
+		&__wrap {
+			position: relative;
+			width: 70%;
+			padding: 45px 35px;
+		}
 
 		&__title {
 			margin: 0;
@@ -86,7 +97,9 @@
 	}
 
 	@include small {
-		width: 445px;
+		&__wrap {
+			width: 445px;
+		}
 
 		&__title {
 			font-size: 130px;
@@ -98,8 +111,10 @@
 	}
 
 	@include medium {
-		width: 620px;
-		padding: 80px 47px 60px;
+		&__wrap {
+			width: 620px;
+			padding: 80px 47px 60px;
+		}
 
 		&__title {
 			font-size: 180px;
@@ -120,8 +135,5 @@
 			margin-top: -50px;
 			height: 303px;
 		}
-	}
-
-	@include large {
 	}
 }

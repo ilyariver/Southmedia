@@ -1,0 +1,30 @@
+.section-cooking-method {
+	margin-bottom: 80px;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__warning {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0 12px 0 0;
+		text-transform: uppercase;
+		font-size: 12px;
+		font-weight: 400;
+
+		&--rotated {
+			writing-mode: vertical-lr;
+			transform: rotate(-180deg);
+		}
+	}
+
+	@include small {
+		&__warning {
+			font-size: 16px;
+			margin: 0 55px 0 0;
+		}
+	}
+}

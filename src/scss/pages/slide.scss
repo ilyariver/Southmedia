@@ -1,0 +1,58 @@
+.slide {
+	height: 100%;
+
+	&__figure {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: inherit;
+	}
+
+	&__figcaption {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 60px;
+	}
+
+	&__title {
+		margin: 0;
+		width: 50%;
+		font-family: "SFProDisplay";
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 18px;
+	}
+
+	&__index {
+		width: 50%;
+		color: $color-gold;
+		font-size: 20px;
+		line-height: 14px;
+	}
+
+	&__image {
+		pointer-events: none;
+	}
+
+	@include intermediate-s {
+		&__title {
+			font-size: 12px;
+		}
+	}
+
+	@include medium {
+		&__figcaption {
+			margin-bottom: 148px;
+		}
+
+		&__index {
+			font-size: 35px;
+			line-height: 6px;
+		}
+
+		&__title {
+			font-size: 24px;
+			line-height: 23px;
+		}
+	}
+}

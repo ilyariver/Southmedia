@@ -1,0 +1,7 @@
+article.slide
+	figure.slide__figure
+		figcaption.slide__figcaption
+			.slide__index= '0' + ++index
+			h4.slide__title!= value.title
+
+		img(src= value.img alt= value.alt).slide__image

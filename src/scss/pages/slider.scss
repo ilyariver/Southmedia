@@ -1,0 +1,55 @@
+.slider {
+	overflow: hidden;
+	user-select: none;
+	touch-action: pan-y;
+
+	&__list {
+		display: flex;
+	}
+
+	&__item {
+		display: flex;
+		align-items: flex-end;
+		flex-shrink: 0;
+		width: calc(230px + (310 - 230) * ((100vw - 320px) / (425 - 320)));
+		padding: 0 15px;
+		border-left: 1px solid $color-white;
+	}
+
+	@include intermediate-s {
+		&__item {
+			width: 295px;
+		}
+	}
+
+	@include intermediate {
+		&__item {
+			width: 410px;
+		}
+	}
+
+	@include extra-small {
+		&__item {
+			width: 295px;
+		}
+	}
+
+	@include small {
+		&__item {
+			width: 415px;
+		}
+	}
+
+	@include medium {
+		&__item {
+			width: 505px;
+			padding: 0 30px;
+		}
+	}
+
+	@include large {
+		&__item {
+			width: 622px;
+		}
+	}
+}

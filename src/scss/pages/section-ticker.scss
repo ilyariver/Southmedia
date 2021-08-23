@@ -1,0 +1,26 @@
+.section-ticker {
+	overflow: hidden;
+
+	&__text {
+		display: flex;
+		text-transform: uppercase;
+		padding: 10px 0;
+		font-size: 16px;
+		border-top: 1px solid $color-white;
+		border-bottom: 1px solid $color-white;
+
+		span {
+			flex-shrink: 0;
+			padding-right: 13px;
+			padding-left: 13px;
+
+			&:first-child {
+				padding-left: 0;
+			}
+
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+	}
+}
