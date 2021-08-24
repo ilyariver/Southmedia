@@ -1,0 +1,16 @@
+.section-recipes {
+    border-bottom: 1px solid $color-white;
+
+    &__wrap {    
+        max-height: 100vh;
+        border-right: 1px solid $color-white;
+        border-left: 1px solid $color-white;
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+
+    &__item {    
+        margin-bottom: 28px;
+        padding: 0 20px;
+    }
+}

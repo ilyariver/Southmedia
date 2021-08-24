@@ -1,39 +1,44 @@
-let slider = document.querySelector('.js-slider-wrap'),
-	sliderList = slider.querySelector('.js-slider'),
-	sliderTrack = slider.querySelector('.js-slider-list'),
-	slides = slider.querySelectorAll('.js-slide'),
-	// arrows = slider.querySelector('.slider-arrows'),
-	slideWidth = slides[0].offsetWidth,
+export const MySlider = (sliderWrap, sliderArguments = null) => {
+	const slider = document.querySelector(sliderWrap);
+	const sliderList = slider.children[0];
+	const sliderTrack = sliderList.children[0];
+	const slides = sliderTrack.children;
+	const slideWidth = slides[0].offsetWidth;
+	let slideIndex = 0;
+	let posInit = 0;
+	let posX1 = 0;
+	let posX2 = 0;
+	let posY1 = 0;
+	let posY2 = 0;
+	let posFinal = 0;
+	let isSwipe = false;
+	let isScroll = false;
+	let allowSwipe = true;
+	let transition = true;
+	let nextTrf = 0;
+	let prevTrf = 0;
+	let lastTrf = --slides.length * slideWidth;
+	let posThreshold = slides[0].offsetWidth * 0.35;
+	let trfRegExp = /([-0-9.]+(?=px))/;
+	let swipeStartTime;
+	let swipeEndTime;
 
-	slideIndex = 0,
-	posInit = 0,
-	posX1 = 0,
-	posX2 = 0,
-	posY1 = 0,
-	posY2 = 0,
-	posFinal = 0,
-	isSwipe = false,
-	isScroll = false,
-	allowSwipe = true,
-	transition = true,
-	nextTrf = 0,
-	prevTrf = 0,
-	lastTrf = --slides.length * slideWidth,
-	posThreshold = slides[0].offsetWidth * 0.35,
-	trfRegExp = /([-0-9.]+(?=px))/,
-	swipeStartTime,
-	swipeEndTime,
-	getEvent = function() {
+	const getEvent = () => {
 		return (event.type.search('touch') !== -1) ? event.touches[0] : event;
-	},
-	slide = function() {
-		if (transition) {
-			sliderTrack.style.transition = 'transform .5s';
-		}
-		sliderTrack.style.transform = `translate3d(-${slideIndex * slideWidth}px, 0px, 0px)`;
+	};
 
-	},
-	swipeStart = function() {
+	const slide = () => {
+		if (transition) {
+			sliderTrack.style.transition = 'transform 1s cubic-bezier(0.25, 0.74, 0.22, 1.1)';
+		}
+		sliderTrack.style.transform
+			= sliderArguments.vertical ?
+				`translateY(-${slideIndex * slideWidth}px)` :
+				`translateX(-${slideIndex * slideWidth}px)`;
+
+	};
+
+	const swipeStart = () => {
 		console.log(slideWidth)
 		let evt = getEvent();
 
@@ -59,9 +64,9 @@ let slider = document.querySelector('.js-slider-wrap'),
 			sliderList.classList.remove('grab');
 			sliderList.classList.add('grabbing');
 		}
-	},
-	swipeAction = function() {
+	};
 
+	const swipeAction = () => {
 		let evt = getEvent(),
 			style = sliderTrack.style.transform,
 			transform = +style.match(trfRegExp)[0];
@@ -107,11 +112,16 @@ let slider = document.querySelector('.js-slider-wrap'),
 				return;
 			}
 
-			sliderTrack.style.transform = `translate3d(${transform - posX2}px, 0px, 0px)`;
+			sliderTrack.style.transform =
+				sliderArguments.vertical ?
+					`translateY(${transform - posX2}px)` :
+					`translateX(${transform - posX2}px)`;
+
 		}
 
-	},
-	swipeEnd = function() {
+	};
+
+	const swipeEnd = () => {
 		posFinal = posInit - posX1;
 
 		isScroll = false;
@@ -146,24 +156,36 @@ let slider = document.querySelector('.js-slider-wrap'),
 			allowSwipe = true;
 		}
 
-	},
-	setTransform = function(transform, comapreTransform) {
+	};
+
+	const setTransform = (transform, comapreTransform) => {
 		if (transform >= comapreTransform) {
 			if (transform > comapreTransform) {
-				sliderTrack.style.transform = `translate3d(${comapreTransform}px, 0px, 0px)`;
+				sliderTrack.style.transform =
+					sliderArguments.vertical ?
+						`translateY(${comapreTransform}px)` :
+						`translateX(${comapreTransform}px)`;
+
 			}
 		}
 		allowSwipe = false;
-	},
-	reachEdge = function() {
+	};
+
+	const reachEdge = () => {
 		transition = false;
 		swipeEnd();
 		allowSwipe = true;
 	};
 
-sliderTrack.style.transform = 'translate3d(0px, 0px, 0px)';
-sliderList.classList.add('grab');
+	sliderTrack.style.transform =
+		sliderArguments.vertical ?
+			`translateY(0)` :
+			`translateX(0)`;
+	sliderList.classList.add('grab');
 
-sliderTrack.addEventListener('transitionend', () => allowSwipe = true);
-slider.addEventListener('touchstart', swipeStart);
-slider.addEventListener('mousedown', swipeStart);
+	sliderTrack.addEventListener('transitionend', () => allowSwipe = true);
+	slider.addEventListener('touchstart', swipeStart);
+	slider.addEventListener('mousedown', swipeStart);
+};
+
+

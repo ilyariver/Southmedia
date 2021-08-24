@@ -1,0 +1,8 @@
+article.slide-recipes
+    figure.slide-recipes__figure
+        figcaption.slide-recipes__figcaption
+            .slide-recipes__index!= `<span>0${++index}</span> &mdash; 0${data.main.slideRecipes.length}` 
+            h2.slide-recipes__title!= value.title
+            p.slide-recipes__text= value.text
+
+        img(src= value.img alt= value.alt).slide-recipes__image

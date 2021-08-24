@@ -1,0 +1,25 @@
+.slide-recipes {
+    &__figcaption {
+        margin-bottom: 25px;
+        line-height: normal;
+    }
+
+    &__index {
+        font-size: 14px;
+
+        span {
+            color: $color-gold;
+        }
+    }
+
+    &__title {
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 35px;
+    }
+
+    &__text {
+        width: 76%;
+        font-family: "SFProDisplay";
+    }
+}

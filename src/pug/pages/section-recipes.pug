@@ -1,0 +1,7 @@
+section.section-recipes
+    .container
+        .section-recipes__wrap.js-recipes-slider-wrap
+            .section-recipes__slider
+                ul.section-recipes__list
+                    each value, index in data.main.slideRecipes
+                        +slideRecipes(value, index)

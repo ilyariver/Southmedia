@@ -20,7 +20,7 @@
 			]
 		}
 	],
-	"requireStrictEqualityOperators": true,
+	requireStrictEqualityOperators": true,
 	"validateAttributeQuoteMarks": "\"",
 	"validateAttributeSeparator": {
 		"separator": " ",
@@ -28,7 +28,7 @@
 	},
 	"validateDivTags": true,
 	"validateIndentation": "\t",
-	"validateLineBreaks": "LF",
+	"validateLineBreaks": "CRLF",
 	"validateSelfClosingTags": true,
 	"validateTemplateString": true
 }
