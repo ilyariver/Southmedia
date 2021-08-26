@@ -1,0 +1,80 @@
+article.question
+	h5.question__title
+		| Насколько ты#[br]
+		| любишь гречу?
+
+	ul.question__answer-options
+		li.question__option
+			button(type="button" data-action="0").btn.question__btn
+				span
+					| 0
+		li.question__option
+			button(type="button" data-action="1-3").btn.question__btn
+				span
+					| 1-3
+		li.question__option
+			button(type="button" data-action="4-6").btn.question__btn
+				span
+					| 4-6
+		li.question__option
+			button(type="button" data-action="7-9").btn.question__btn
+				span
+					| 7-9
+		li.question__option
+			button(
+				type="button"
+				aria-label="лайк"
+				data-action="like"
+				).btn.question__btn.question__btn--heart
+
+				img(src="/images/heart.svg" alt="сердце")
+
+article.question
+	h5.question__title
+		| Время готовки #[br]
+		| гречи?
+
+	.question__range
+		button(type="button" aria-label="убавить").btn.question__edit-btn.js-button-minus
+			span
+				| &ndash;
+		.question__time-cooking
+			.question__time
+				| 20
+			.question__minutes
+				| Минут
+		button(type="button" aria-label="прибавить").btn.question__edit-btn.js-button-plus
+			span
+				|+
+
+article.question
+	h5.question__title
+		| Время приема #[br]
+		| гречи?
+
+	ul.question__answer-options
+		li.question__option
+			button(type="button" data-action="breakfast").btn.question__btn
+				span
+					| Завтрак
+		li.question__option
+			button(type="button" data-action="dinner").btn.question__btn
+				span
+					| Обед
+		li.question__option
+			button(type="button" data-action="supper").btn.question__btn
+				span
+					| Ужин
+		li.question__option
+			button(type="button" data-action="nightOvereating").btn.question__btn
+				span
+					| Ночной дожор
+
+article.question
+	h5.question__title
+		| Кто получит #[br]
+		| гречу?
+
+	form.question__form
+		input(type="text" placeholder="Ваше имя").question__input
+		input(type="text" placeholder="Ваш телефон").question__input

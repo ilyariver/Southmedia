@@ -1,16 +1,204 @@
 .section-recipes {
+	width: 100%;
     border-bottom: 1px solid $color-white;
+	margin-bottom: 80px;
 
-    &__wrap {    
-        max-height: 100vh;
+	&__recipes {
+		position: relative;
+		height: 35rem;
+		border-right: 1px solid #F7F6F2;
+		border-left: 1px solid #F7F6F2;
+		padding: 40px 20px 0;
+	}
+
+	&__figcaption {
+		position: absolute;
+		line-height: normal;
+
+		&.hide {
+			opacity: 0;
+		}
+	}
+
+	&__index {
+		font-size: 1.5rem;
+
+		span {
+			color: $color-gold;
+		}
+	}
+
+	&__title {
+		text-transform: uppercase;
+		font-weight: 400;
+		font-size: 3rem;
+	}
+
+	&__text {
+		width: 76%;
+		font-family: "SFProDisplay";
+		font-size: 1.3rem;
+	}
+
+    &__wrap {
         border-right: 1px solid $color-white;
         border-left: 1px solid $color-white;
-        padding-top: 80px;
         padding-bottom: 40px;
     }
 
-    &__item {    
+	&__slider {
+		overflow: hidden;
+		height: 20rem;
+	}
+
+    &__item {
         margin-bottom: 28px;
         padding: 0 20px;
     }
+
+	@include intermediate-s {
+		&__recipes {
+			height: 36rem;
+		}
+
+	}
+
+	@include intermediate {
+		&__figcaption {
+			padding-top: 20px;
+		}
+
+		&__text {
+			font-size: 1.2rem;
+		}
+
+		&__recipes {
+			height: 35rem;
+		}
+	}
+
+	@include extra-small {
+		&__container {
+			display: flex;
+			width: 670px;
+		}
+
+		&__recipes {
+			width: calc(100% / 2 + 20px);
+			height: 0;
+			border: none;
+			padding: 0;
+		}
+
+		&__gigcaption {
+			padding-top: 20px;
+		}
+
+		&__index {
+			font-size: 16px;
+		}
+
+		&__title {
+			font-size: 28px;
+		}
+
+		&__text {
+			font-size: 8px;
+		}
+
+		&__wrap {
+			padding-top: 40px;
+			width: calc(100% / 2 + 20px);
+		}
+
+		&__slider {
+			height: auto;
+		}
+
+		&__item {
+			margin: 0;
+		}
+	}
+
+	@include small {
+		&__container {
+			width: 800px;
+		}
+
+		&__figcaption {
+			padding-top: 53px;
+		}
+
+		&__index {
+			margin-bottom: 30px;
+			font-size: 24px;
+		}
+
+		&__title {
+			margin: 0 0 30px 0;
+			font-size: 40px;
+		}
+
+		&__text {
+			font-size: 10px;
+		}
+
+		&__wrap {
+			padding: 80px 0;
+		}
+
+		&__item {
+			padding: 0 30px;
+		}
+	}
+
+	@include medium {
+		&__container {
+			width: 1010px;
+		}
+		&__figcaption {
+			padding-top: 120px;
+		}
+
+		&__index {
+			margin-bottom: 23px;
+			font-size: 24px;
+		}
+
+		&__title {
+			margin: 0 0 30px 0;
+			font-size: 40px;
+		}
+
+		&__text {
+			font-size: 10px;
+		}
+
+		&__wrap {
+			padding: 160px 0;
+		}
+
+		&__item {
+			padding: 0 30px;
+		}
+	}
+
+	@include large {
+		margin-bottom: 250px;
+
+		&__container {
+			width: 1295px;
+		}
+
+		&__title {
+			margin-bottom: 60px;
+			font-size: 56px;
+			line-height: 63px;
+		}
+
+		&__text {
+			width: 60%;
+			font-size: 15px;
+		}
+	}
 }

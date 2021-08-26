@@ -2,7 +2,7 @@ export const MySlider = (sliderWrap, sliderArguments = null) => {
 	const slider = document.querySelector(sliderWrap);
 	const sliderList = slider.children[0];
 	const sliderTrack = sliderList.children[0];
-	const slides = sliderTrack.children;
+	const slides = [...sliderTrack.children];
 	const slideWidth = slides[0].offsetWidth;
 	let slideIndex = 0;
 	let posInit = 0;
@@ -17,8 +17,9 @@ export const MySlider = (sliderWrap, sliderArguments = null) => {
 	let transition = true;
 	let nextTrf = 0;
 	let prevTrf = 0;
-	let lastTrf = --slides.length * slideWidth;
+	let lastTrf = slides.length * slideWidth;
 	let posThreshold = slides[0].offsetWidth * 0.35;
+
 	let trfRegExp = /([-0-9.]+(?=px))/;
 	let swipeStartTime;
 	let swipeEndTime;
@@ -35,11 +36,9 @@ export const MySlider = (sliderWrap, sliderArguments = null) => {
 			= sliderArguments.vertical ?
 				`translateY(-${slideIndex * slideWidth}px)` :
 				`translateX(-${slideIndex * slideWidth}px)`;
-
 	};
 
 	const swipeStart = () => {
-		console.log(slideWidth)
 		let evt = getEvent();
 
 		if (slides) {
@@ -67,9 +66,9 @@ export const MySlider = (sliderWrap, sliderArguments = null) => {
 	};
 
 	const swipeAction = () => {
-		let evt = getEvent(),
-			style = sliderTrack.style.transform,
-			transform = +style.match(trfRegExp)[0];
+		const evt = getEvent();
+		const style = sliderTrack.style.transform;
+		const transform = +style.match(trfRegExp)[0];
 
 		posX2 = posX1 - evt.clientX;
 		posX1 = evt.clientX;
@@ -98,7 +97,7 @@ export const MySlider = (sliderWrap, sliderArguments = null) => {
 			}
 
 			// запрет ухода вправо на последнем слайде
-			if (slideIndex === --slides.length) {
+			if (slideIndex === slides.length) {
 				if (posInit > posX1) {
 					setTransform(transform, lastTrf);
 					return;
@@ -155,7 +154,6 @@ export const MySlider = (sliderWrap, sliderArguments = null) => {
 		} else {
 			allowSwipe = true;
 		}
-
 	};
 
 	const setTransform = (transform, comapreTransform) => {

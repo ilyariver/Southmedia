@@ -36,13 +36,13 @@
 
 	@include small {
 		&__item {
-			width: 415px;
+			width: 365px;
 		}
 	}
 
 	@include medium {
 		&__item {
-			width: 505px;
+			width: 460px;
 			padding: 0 30px;
 		}
 	}

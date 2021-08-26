@@ -1,15 +1,6 @@
 const tickerText = document.querySelector('.js-ticker-text');
 
-window.onscroll = function(ev) {
-
-	// if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-	// 	const span = document.createElement('span')
-	// 	span.innerHTML = 'Блюда из гречки&nbsp;'
-	// 	tickerText.appendChild(span)
-	// }
-	
-	
-
+window.onscroll = () => {
 	if (window.pageYOffset >= 500 && window.pageYOffset < 700) {
 		const span = document.createElement('span')
 		span.innerHTML = 'Блюда из гречки&nbsp;'

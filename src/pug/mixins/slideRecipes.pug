@@ -1,3 +1,9 @@
-mixin slideRecipes(value, index)   
-    li.section-recipes__item
-        include ../pages/slide-recipes
+mixin slideRecipesImage(value)
+	li.section-recipes__item
+		include ../pages/slide-recipes
+
+mixin slideRecipesCaption(value, index)
+	.section-recipes__figcaption
+		.section-recipes__index!= `<span>0${++index}</span> &mdash; 0${data.main.slideRecipes.length}`
+		h3.section-recipes__title!= value.title
+		p.section-recipes__text= value.text

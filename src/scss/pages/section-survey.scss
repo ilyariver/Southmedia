@@ -1,0 +1,105 @@
+.section-survey {
+	margin-bottom: 5rem;
+
+	&__wrap {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	&__title {
+		margin: 0 0 2rem;
+		text-transform: uppercase;
+		font-weight: 400;
+		font-size: 4rem;
+	}
+
+	&__text {
+		margin-bottom: 2rem;
+		font-family: "SFProDisplay";
+		font-size: 1.4rem;
+	}
+
+	&__state-answers {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 20px;
+		width: 100%;
+
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: -5px;
+			width: 100%;
+			height: 1px;
+			background-color: $color-white;
+		}
+	}
+
+	&__step {
+		font-size: 1.4rem;
+
+		&--cold {
+			color: $color-gold;
+		}
+	}
+
+	@include intermediate {
+		&__text {
+			font-size: 0.7rem;
+		}
+	}
+
+	@include extra-small {
+		&__title {
+			font-size: 2.2rem;
+		}
+
+		&__text {
+			font-size: 8px;
+		}
+
+		&__step {
+			font-size: 24px
+		}
+	}
+
+	@include small {
+		&__text {
+			font-size: 15px;
+		}
+	}
+
+	@include medium {
+		&__title {
+			margin: 0 0 30px;
+			font-size: 105px;
+			line-height: 95px;
+		}
+
+		&__state-answers {
+			width: 930px;
+		}
+	}
+
+	@include large {
+		&__text {
+			margin-bottom: 107px;
+		}
+
+		&__state-answers {
+			width: 1240px;
+			margin-bottom: 58px;
+		}
+
+		&__state-answers {
+			&:after {
+				bottom: -14px;
+			}
+		}
+	}
+}
