@@ -1,0 +1,19 @@
+@keyframes blockName {
+	from {
+		opacity: 0;
+		transform: perspective(268px) rotateX(33deg);
+	}
+	to {
+		opacity: 1;
+		transform: perspective(268px) rotateX(0);
+	}
+}
+
+@keyframes marquee {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-200%);
+	}
+}
