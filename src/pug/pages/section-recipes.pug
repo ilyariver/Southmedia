@@ -1,7 +1,11 @@
 section.section-recipes
-    .container
-        .section-recipes__wrap.js-recipes-slider-wrap
-            .section-recipes__slider
-                ul.section-recipes__list
-                    each value, index in data.main.slideRecipes
-                        +slideRecipes(value, index)
+	.container.section-recipes__container
+		.section-recipes__recipes
+			each value, index in data.main.slideRecipes
+				+slideRecipesCaption(value, index)
+
+		.section-recipes__wrap.js-recipes-slider-wrap
+			.section-recipes__slider
+				ul.section-recipes__list
+					each value in data.main.slideRecipes
+						+slideRecipesImage(value)

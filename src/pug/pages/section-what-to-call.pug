@@ -1,50 +1,51 @@
 section.section-what-to-call.main-section__what-to-call
 	.container.section-what-to-call__container
-		p.section-what-to-call__text
-			span.section-what-to-call__proverb.section-what-to-call__proverb--crossOut
-				| Гречка
+		.section-what-to-call__wrap
+			p.section-what-to-call__text
+				span.section-what-to-call__proverb.section-what-to-call__proverb--crossOut
+					| Гречка
 
-			+ lazyImage({
-				src: '/images/city-moscow-l.jpg',
-				alt: 'Москва'
-			}).section-what-to-call__image
+				img(
+					src="/images/city-moscow-l.jpg"
+					alt="Москва"
+				).section-what-to-call__image
 
-			span.section-what-to-call__proverb
-				| москвичам
+				span.section-what-to-call__proverb
+					| москвичам
 
-		p.section-what-to-call__text
-			+ lazyImage({
-				src: '/images/little-dish.jpg',
-				alt: 'Блюдо из гречи'
-			}).section-what-to-call__image.section-what-to-call__image--not-right
+			p.section-what-to-call__text
+				img(
+					src="/images/little-dish.jpg"
+					alt="Блюдо из гречи"
+				).section-what-to-call__image.section-what-to-call__image--not-right
 
-			span.section-what-to-call__proverb
-				| a&nbsp;
+				span.section-what-to-call__proverb
+					| a&nbsp;
+					span.section-what-to-call__proverb.section-what-to-call__proverb--yellow-italic
+						| греча&nbsp;
+					| она
+
+				img(
+					src="/images/little-dish-second.jpg"
+					alt="Греча с грибами"
+				).section-what-to-call__image
+
+				span.section-what-to-call__proverb
+					| как
+
+			p.section-what-to-call__text
 				span.section-what-to-call__proverb.section-what-to-call__proverb--yellow-italic
-					| греча&nbsp;
-				| она
+					| Питер
 
-			+ lazyImage({
-				src: '/images/little-dish-second.jpg',
-				alt: 'Греча с грибами'
-			}).section-what-to-call__image
+				img(
+					src="/images/city-spb-l.jpg"
+					alt="Питер"
+				).section-what-to-call__image
 
-			span.section-what-to-call__proverb
-				| как
+				span.section-what-to-call__proverb.section-what-to-call__proverb--italic
+					| греча
+				span.section-what-to-call__arrow
 
-		p.section-what-to-call__text
-			span.section-what-to-call__proverb.section-what-to-call__proverb--yellow-italic
-				| Питер
-
-			+ lazyImage({
-				src: '/images/city-spb-l.jpg',
-				alt: 'Питер'
-			}).section-what-to-call__image
-
-			span.section-what-to-call__proverb.section-what-to-call__proverb--italic
-				| греча
-			span.section-what-to-call__arrow
-
-			span.section-what-to-call__proverb.section-what-to-call__proverb--yellow-italic
-				| твое
+				span.section-what-to-call__proverb.section-what-to-call__proverb--yellow-italic
+					| твое
 

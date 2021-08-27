@@ -17,7 +17,7 @@ export const MySlider = (sliderWrap, sliderArguments = null) => {
 	let transition = true;
 	let nextTrf = 0;
 	let prevTrf = 0;
-	let lastTrf = --slides.childElementCount * slideWidth;
+	let lastTrf = slides.length * slideWidth;
 	let posThreshold = slides[0].offsetWidth * 0.35;
 	let trfRegExp = /([-0-9.]+(?=px))/;
 	let swipeStartTime;
@@ -38,7 +38,32 @@ export const MySlider = (sliderWrap, sliderArguments = null) => {
 
 	};
 
+	const swipeStart = () => {
+		let evt = getEvent();
 
+		if (slides) {
+
+			swipeStartTime = Date.now();
+
+			transition = true;
+
+			nextTrf = (slideIndex + 1) * -slideWidth;
+			prevTrf = (slideIndex - 1) * -slideWidth;
+
+			posInit = posX1 = evt.clientX;
+			posY1 = evt.clientY;
+
+			sliderTrack.style.transition = '';
+
+			document.addEventListener('touchmove', swipeAction);
+			document.addEventListener('mousemove', swipeAction);
+			document.addEventListener('touchend', swipeEnd);
+			document.addEventListener('mouseup', swipeEnd);
+
+			sliderList.classList.remove('grab');
+			sliderList.classList.add('grabbing');
+		}
+	};
 
 	const swipeAction = () => {
 		const evt = getEvent();
@@ -72,7 +97,7 @@ export const MySlider = (sliderWrap, sliderArguments = null) => {
 			}
 
 			// запрет ухода вправо на последнем слайде
-			if (slideIndex === --slides.childElementCount) {
+			if (slideIndex === slides.length) {
 				if (posInit > posX1) {
 					setTransform(transform, lastTrf);
 					return;
@@ -90,19 +115,9 @@ export const MySlider = (sliderWrap, sliderArguments = null) => {
 				sliderArguments.vertical ?
 					`translateY(${transform - posX2}px)` :
 					`translateX(${transform - posX2}px)`;
-		}
-	};
 
-	const setTransform = (transform, comapreTransform) => {
-		if (transform >= comapreTransform) {
-			if (transform > comapreTransform) {
-				sliderTrack.style.transform =
-					sliderArguments.vertical ?
-						`translateY(${comapreTransform}px)` :
-						`translateX(${comapreTransform}px)`;
-			}
 		}
-		allowSwipe = false;
+
 	};
 
 	const swipeEnd = () => {
@@ -142,31 +157,17 @@ export const MySlider = (sliderWrap, sliderArguments = null) => {
 
 	};
 
-	const swipeStart = () => {
-		let evt = getEvent();
+	const setTransform = (transform, comapreTransform) => {
+		if (transform >= comapreTransform) {
+			if (transform > comapreTransform) {
+				sliderTrack.style.transform =
+					sliderArguments.vertical ?
+						`translateY(${comapreTransform}px)` :
+						`translateX(${comapreTransform}px)`;
 
-		if (slides) {
-
-			swipeStartTime = Date.now();
-
-			transition = true;
-
-			nextTrf = (slideIndex + 1) * -slideWidth;
-			prevTrf = (slideIndex - 1) * -slideWidth;
-
-			posInit = posX1 = evt.clientX;
-			posY1 = evt.clientY;
-
-			sliderTrack.style.transition = '';
-
-			document.addEventListener('touchmove', swipeAction);
-			document.addEventListener('mousemove', swipeAction);
-			document.addEventListener('touchend', swipeEnd);
-			document.addEventListener('mouseup', swipeEnd);
-
-			sliderList.classList.remove('grab');
-			sliderList.classList.add('grabbing');
+			}
 		}
+		allowSwipe = false;
 	};
 
 	const reachEdge = () => {
@@ -176,7 +177,9 @@ export const MySlider = (sliderWrap, sliderArguments = null) => {
 	};
 
 	sliderTrack.style.transform =
-		sliderArguments.vertical ? 'translateY(0)' : 'translateX(0)';
+		sliderArguments.vertical ?
+			`translateY(0)` :
+			`translateX(0)`;
 	sliderList.classList.add('grab');
 
 	sliderTrack.addEventListener('transitionend', () => allowSwipe = true);

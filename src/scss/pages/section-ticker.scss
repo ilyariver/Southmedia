@@ -1,16 +1,18 @@
 .section-ticker {
+	width: 100%;
 	overflow: hidden;
 	border-top: 1px solid $color-white;
 	border-bottom: 1px solid $color-white;
-	
+
 	&__text {
 		display: flex;
 		text-transform: uppercase;
 		padding: 10px 0;
 		font-size: 16px;
-		
 
-		span {
+		& > * {
+			display: flex;
+			align-items: center;
 			flex-shrink: 0;
 			padding-right: 13px;
 			padding-left: 13px;
@@ -22,6 +24,27 @@
 			&:last-child {
 				padding-right: 0;
 			}
+		}
+
+		img {
+			padding-left: 1rem;
+			height: 14px;
+		}
+	}
+
+	@include medium {
+		&__text {
+			padding: 17px 0;
+			font-size: 24px;
+
+			& > * {
+				padding: 0 60px 0 0;
+			}
+		}
+
+		img {
+			padding-left: 20px;
+			height: 20px;
 		}
 	}
 }

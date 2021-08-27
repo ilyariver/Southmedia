@@ -7,8 +7,8 @@ window.onscroll = function(ev) {
 	// 	span.innerHTML = 'Блюда из гречки&nbsp;'
 	// 	tickerText.appendChild(span)
 	// }
-	
-	
+
+
 
 	if (window.pageYOffset >= 500 && window.pageYOffset < 700) {
 		const span = document.createElement('span')

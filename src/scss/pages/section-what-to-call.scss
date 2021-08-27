@@ -1,12 +1,17 @@
 .section-what-to-call {
-
 	&__container {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__wrap {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		flex-wrap: wrap;
 		text-transform: uppercase;
-		padding: 8rem 0;
+		padding-top: 8rem;
+		padding-bottom: 8rem;
 	}
 
 	&__text {
@@ -75,8 +80,8 @@
 	}
 
 	@include extra-small {
-		&__container {
-			padding: 10rem 0;
+		&__wrap {
+			padding: 5rem 0;
 		}
 
 		&__proverb {
@@ -90,7 +95,7 @@
 	}
 
 	@include large {
-		&__container {
+		&__wrap {
 			width: 1250px;
 			padding: 240px 0;
 		}

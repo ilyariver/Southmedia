@@ -1,0 +1,176 @@
+.question {
+	width: 100%;
+	//border: 1px solid red;
+	&__title {
+		text-transform: uppercase;
+		font-size: 2.5rem;
+		font-weight: 400;
+	}
+
+	&__answer-options {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__option {
+		font-size: 0.8rem;
+
+		img {
+			width: 2rem;
+		}
+
+		&:not(:last-child) {
+			margin-right: 0.6rem;
+		}
+
+		&:last-child {
+			font-size: 0.65rem;
+		}
+	}
+
+	&__btn {
+		flex-shrink: 0;
+		min-width: 5rem;
+		min-height: 5rem;
+		border-radius: 50%;
+		background-color: $color-gray;
+		color: $color-gold;
+		font-family: "SFProDisplay";
+	}
+
+	&__range {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 1px solid $color-white;
+		padding-bottom: 15px;
+	}
+
+	&__time {
+		color: $color-gold;
+		font-size: 3rem;
+		margin-bottom: 0.2rem;
+	}
+
+	&__edit-btn {
+		width: 2rem;
+		height: 2rem;
+		padding: 0;
+		font-size: 5rem;
+		color: $color-white;
+	}
+
+	&__time-cooking {
+		font-family: "SFProDisplay";
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__input {
+		height: 3rem;
+		background-color: transparent;
+		border: none;
+		border-bottom: 1px solid $color-white;
+		color: $color-gold;
+		outline-color: $color-gold;
+		font-family: "SFProDisplay";
+
+		&::placeholder {
+			color: #666;
+		}
+	}
+
+	@include intermediate {
+		&__option {
+			img {
+				width: 24px;
+			}
+		}
+	}
+
+	@include extra-small {
+		width: 70%;
+
+		&__title {
+			font-size: 28px;
+		}
+
+		&__btn {
+			font-size: 12px;
+		}
+
+		&__time {
+			font-size: 32px;
+		}
+
+		&__minutes {
+			font-size: 10px;
+		}
+
+		&__edit-btn {
+			font-size: 65px;
+
+			span {
+				display: block;
+			}
+		}
+
+		&__option {
+			img {
+				width: 30px;
+			}
+		}
+
+		&__input {
+			font-size: 22px;
+
+			&:not(:last-child) {
+				margin-bottom: 10px;
+			}
+		}
+	}
+
+	@include medium {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		&:not(:last-child) {
+			margin-bottom: 75px;
+		}
+
+		&__title {
+			margin-top: 0;
+			margin-bottom: 57px;
+			font-size: 56px;
+		}
+
+		&__btn {
+			min-width: 180px;
+			min-height: 180px;
+			font-size: 20px;
+		}
+
+		&__option {
+			&:not(:last-child) {
+				margin-right: 25px;
+			}
+
+			img {
+				width: 40px;
+			}
+		}
+
+		&__range {
+			width: 620px;
+		}
+
+		&__input {
+			width: 620px;
+			height: 70px;
+		}
+	}
+}

@@ -1,0 +1,132 @@
+.footer {
+	display: flex;
+	flex-direction: column;
+	padding: 80px 50px;
+	font-family: SFProDisplay;
+
+	&__logo-southmedia {
+		margin-bottom: 3.5rem;
+	}
+
+	&__navigation {
+		position: static;
+		transform: translateX(0);
+		background-color: transparent;
+		margin-bottom: 3.5rem;
+	}
+
+	&__navigation-list {
+		align-items: flex-start;
+		padding: 0;
+		border-bottom: none;
+
+		.navigation__item {
+			margin-top: 0;
+			font-size: 1.2rem;
+			line-height: 2rem;
+		}
+
+		.navigation__link {
+			line-height: normal;
+		}
+	}
+
+	&__contacts {
+		display: flex;
+		flex-direction: column;
+		align-items: normal;
+		position: static;
+		margin-bottom: 3.5rem;
+
+		.contacts__phone-number {
+			margin-bottom: 1rem;
+		}
+	}
+
+	&__copyright {
+		display: flex;
+		color: #666666;
+	}
+
+	@include extra-small {
+		&__wrap {
+			display: flex;
+			justify-content: space-between;
+
+			& > * {
+				flex-shrink: 0;
+			}
+		}
+
+		&__logo-southmedia {
+			margin-bottom: 0;
+		}
+
+		&__navigation {
+			margin-bottom: 0;
+		}
+
+		&__navigation-list {
+			.navigation__item {
+				font-size: 10px;
+				line-height: normal;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			.navigation__link {
+				line-height: normal;
+			}
+		}
+
+		&__contacts {
+			margin-bottom: 0;
+			width: auto;
+			font-size: 14px;
+
+			.contacts__phone-number {
+				margin-bottom: 10px;
+			}
+		}
+
+		&__copyright {
+			font-size: 10px;
+		}
+	}
+
+	@include small {
+		&__wrap {
+			width: 1200px;
+		}
+
+		&__navigation {
+			width: auto;
+		}
+
+		&__navigation-list {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	@include medium {
+		align-items: center;
+
+		&__wrap {
+			width: 80%;
+		}
+
+		&__navigation-list {
+			.navigation__item {
+				font-size: 13px;
+				line-height: normal;
+			}
+		}
+
+		&__contacts {
+			font-size: 20px;
+		}
+	}
+}
