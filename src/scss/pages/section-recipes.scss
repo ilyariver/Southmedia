@@ -1,14 +1,17 @@
 .section-recipes {
 	width: 100%;
-    border-bottom: 1px solid $color-white;
 	margin-bottom: 80px;
+
+	&__container {
+		border-bottom: 1px solid $color-white;
+	}
 
 	&__recipes {
 		position: relative;
-		height: 35rem;
+		height: 30rem;
 		border-right: 1px solid #F7F6F2;
 		border-left: 1px solid #F7F6F2;
-		padding: 40px 20px 0;
+		padding: 30px 20px 0;
 	}
 
 	&__figcaption {
@@ -31,7 +34,7 @@
 	&__title {
 		text-transform: uppercase;
 		font-weight: 400;
-		font-size: 3rem;
+		font-size: 2.5rem;
 	}
 
 	&__text {
@@ -43,7 +46,7 @@
     &__wrap {
         border-right: 1px solid $color-white;
         border-left: 1px solid $color-white;
-        padding-bottom: 40px;
+        padding-bottom: 20px;
     }
 
 	&__slider {

@@ -1,0 +1,112 @@
+.parallax {
+	perspective: 1px;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	&__group {
+		position: relative;
+		height: 100vh;
+		transform-style: preserve-3d;
+
+		&:nth-child(2) {
+			& .parallax__layer--back {
+				transform: translateZ(-1px) scale(2) translateY(-20rem);
+			}
+
+			& .parallax__layer--base {
+				transform: translateZ(0) translateY(-8rem);
+			}
+		}
+
+		&:nth-child(3) {
+			& .parallax__layer--back:first-child {
+				transform: translateZ(-1px) scale(2) translateY(-21px);
+			}
+		}
+
+		&:nth-child(4) {
+			& .parallax__layer--base:last-child {
+				transform: translateZ(0) translateY(415px);
+			}
+		}
+	}
+
+	&__layer {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		&--base {
+			transform: translateZ(0);
+		}
+
+		&--back {
+			transform: translateZ(-1px) scale(2);
+		}
+	}
+
+	@include iphone5 {
+		&__group {
+			&:nth-child(2) {
+				& .parallax__layer--back {
+					transform: translateZ(-1px) scale(2) translateY(-25rem);
+				}
+
+				& .parallax__layer--base {
+					transform: translateZ(0) translateY(-10rem);
+				}
+			}
+		}
+	}
+
+	@include small {
+		&__group {
+			&:nth-child(2) {
+				& .parallax__layer--back {
+					transform: translateZ(-1px) scale(2) translateY(-810px);
+				}
+
+				& .parallax__layer--base {
+					transform: translateZ(0) translateY(-820px);
+				}
+			}
+		}
+	}
+
+	@include medium {
+		&__group {
+			&:nth-child(2) {
+				& .parallax__layer--back {
+					transform: translateZ(-1px) scale(2) translateY(-1866px);
+				}
+
+				& .parallax__layer--base {
+					transform: translateZ(0) translateY(-2250px);
+				}
+			}
+
+			&:nth-child(3) {
+				& .parallax__layer--back:first-child {
+					transform: translateZ(-1px) scale(2) translateY(-44px);
+				}
+			}
+
+			&:nth-child(4) {
+				& .parallax__layer--base:last-child {
+					transform: translateZ(0) translateY(940px);
+				}
+			}
+		}
+
+		@include large {
+			&:nth-child(3) {
+				& .parallax__layer--back:first-child {
+					transform: translateZ(-1px) scale(2) translateY(-21px);
+				}
+			}
+		}
+	}
+}

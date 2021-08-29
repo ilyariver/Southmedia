@@ -4,6 +4,9 @@
 	&__container {
 		display: flex;
 		justify-content: space-between;
+		width:100%;
+		background-color: $color-black;
+		padding: 40px 20px;
 	}
 
 	&__warning {
@@ -18,6 +21,12 @@
 		&--rotated {
 			writing-mode: vertical-lr;
 			transform: rotate(-180deg);
+		}
+	}
+
+	@include extra-small {
+		&__container {
+			padding: 40px 65px;
 		}
 	}
 

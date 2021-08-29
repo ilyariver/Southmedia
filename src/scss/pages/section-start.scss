@@ -1,4 +1,6 @@
 .section-start {
+	top: 0;
+
 	&__wrap {
 		display: flex;
 		flex-direction: column;
@@ -9,13 +11,13 @@
 		background-image: url("../images/noise.svg");
 		background-color: $color-gray;
 		opacity: 0;
-		transform: perspective(268px) rotateX(33deg);
+		transform: scaleY(0) translateY(500px);
 
 		&.show {
 			animation-name: blockName;
 			animation-duration: 0.5s;
 			opacity: 1;
-			transform: perspective(268px) rotateX(0);
+			transform: scaleY(1) translateY(0);
 		}
 	}
 

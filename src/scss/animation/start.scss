@@ -1,11 +1,24 @@
 @keyframes blockName {
-	from {
-		opacity: 0;
-		transform: perspective(268px) rotateX(33deg);
+	0% {
+		transform: scaleY(0.1);
 	}
-	to {
-		opacity: 1;
-		transform: perspective(268px) rotateX(0);
+	40% {
+		transform: scaleY(1.02);
+	}
+	60% {
+		transform: scaleY(0.98);
+	}
+	80% {
+		transform: scaleY(1.01);
+	}
+	100% {
+		transform: scaleY(0.98);
+	}
+	80% {
+		transform: scaleY(1.01);
+	}
+	100% {
+		transform: scaleY(1);
 	}
 }
 

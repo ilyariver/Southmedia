@@ -1,8 +1,12 @@
 .header {
-	position: relative;
-	margin-bottom: 50px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
 	padding: 20px 0;
 	font-family: "SFProDisplay";
+	background-color: rgba(28, 28, 28, 0.25);
 	z-index: 3;
 
 	&__contact {
