@@ -1,5 +1,16 @@
 .logo-southmedia {
 	position: relative;
 	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	z-index: 3;
+
+	@include small {
+		transition: transform 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+		&:hover {
+			transform: rotate(-5deg);
+			transition: transform 0.2s ease-in;
+		}
+	}
 }

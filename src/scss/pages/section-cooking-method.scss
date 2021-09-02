@@ -1,11 +1,12 @@
 .section-cooking-method {
-	margin-bottom: 80px;
+	height: 38.5rem;
+	//backdrop-filter: blur(5px);
 
 	&__container {
 		display: flex;
 		justify-content: space-between;
 		width:100%;
-		background-color: $color-black;
+		background-color: #1c1c1c85;
 		padding: 40px 20px;
 	}
 
@@ -20,13 +21,25 @@
 
 		&--rotated {
 			writing-mode: vertical-lr;
-			transform: rotate(-180deg);
+			transform: rotate(-180deg) translateX(590px);
+
+			&.show-descriptor {
+				transform: rotate(-180deg) translateX(0);
+				transition: transform 3s cubic-bezier(0.16, 1, 0.3, 1);
+			}
 		}
 	}
 
 	@include extra-small {
+		height: 18.5rem;
+
 		&__container {
 			padding: 40px 65px;
+		}
+
+		&__warning {
+			margin: 0 4px 0 0;
+			font-size: 20px;
 		}
 	}
 
@@ -38,10 +51,15 @@
 	}
 
 	@include medium {
-		margin-bottom: 150px;
+		height: 493px;
 	}
 
 	@include large {
-		margin-bottom: 248px;
+		height: 638px;
+		overflow: hidden;
+
+		&__container {
+			width: 1505px;
+		}
 	}
 }

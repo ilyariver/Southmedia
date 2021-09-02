@@ -1,6 +1,13 @@
 .question {
 	width: 100%;
-	//border: 1px solid red;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	&:not(:first-child) {
+		opacity: 0;
+	}
+
 	&__title {
 		text-transform: uppercase;
 		font-size: 2.5rem;
@@ -30,8 +37,8 @@
 
 	&__btn {
 		flex-shrink: 0;
-		min-width: 5rem;
-		min-height: 5rem;
+		min-width: 6.5rem;
+		min-height: 6.5rem;
 		border-radius: 50%;
 		background-color: $color-gray;
 		color: $color-gold;
@@ -145,7 +152,7 @@
 		&__title {
 			margin-top: 0;
 			margin-bottom: 57px;
-			font-size: 56px;
+			font-size: 45px;
 		}
 
 		&__btn {

@@ -1,10 +1,10 @@
 mixin listItems(text, link)
-	li.navigation__item
+	li(data-text= text).navigation__item
 		a(href="#").navigation__link
 			| #{text}
 
 nav.navigation
-	ul.navigation__list
+	ul.container.navigation__list
 		+listItems('Горячая. Коричневая. Твоя')
 		+listItems('Топчик рецептов')
 		+listItems('Вари гречу')

@@ -19,7 +19,7 @@ const stateWidthWindow = () => {
 stateWidthWindow();
 
 headerMenuButton.addEventListener('click', () => {
-	document.querySelector('.navigation').classList.toggle('is-active');
+	document.body.classList.toggle('is-active');
 });
 
 window.onresize = () => {

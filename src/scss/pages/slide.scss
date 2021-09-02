@@ -40,14 +40,31 @@
 		}
 	}
 
+	@include extra-small {
+		&__title {
+			font-size: 19px;
+		}
+	}
+
 	@include medium {
 		&__figcaption {
-			margin-bottom: 148px;
+			margin-bottom: 85px;
 		}
 
 		&__index {
 			font-size: 35px;
 			line-height: 10px;
+		}
+
+		&__title {
+			font-size: 14px;
+			line-height: 19px;
+		}
+	}
+
+	@include large {
+		&__figcaption {
+			margin-bottom: 148px;
 		}
 
 		&__title {

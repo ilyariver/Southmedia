@@ -1,45 +1,145 @@
 .navigation {
 	position: fixed;
-	top: 0;
+	top: -100%;
 	left: 0;
 	right: 0;
 	bottom: 0;
 	z-index: 2;
-	background-color: $color-gray;
+	height: 100vh;
+	width: 100%;
 	transition: transform 0.2s $easing-back-in;
-	transform: translateX(100%);
+	transform: translate3d(0,0,0);
+	backface-visibility: hidden;
+	overflow: hidden;
 
-	&.is-active {
-		min-width: 320px;
-		transition: transform 0.2s $easing-back-out;
-		transform: translateX(0);
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+		background-color: $color-gold;
+		width: 100%;
+		height: 0;
+		padding-bottom: 100%;
+		border-radius: 100%;
+		transform: scale(0.04) translateY(9999px);
+		overflow: hidden;
+	}
+
+	.is-active & {
+		top: 0;
+
+		&:before {
+			animation: menu-animation 0.8s ease-out forwards;
+		}
 	}
 
 	&__list {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: flex-end;
 		justify-content: space-evenly;
 		padding-right: 20px;
 		padding-left: 20px;
-		width: 100%;
-		height: 90%;
-		font-size: 20px;
-		border-bottom: 1px solid #383838;
+		height: 80%;
+		font-size: 23px;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate3d(-50%,-50%,0);
+		backface-visibility: hidden;
+		perspective: 1000;
+		color: $color-white;
 	}
 
 	&__item {
 		text-align: center;
 		margin: 10px 0;
+		opacity: 0;
+		transform: translate3d(0,36px,0);
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			background-color: white;
+			height: 100%;
+			width: 0;
+			overflow: hidden;
+			transition: width 0.14s ease-out;
+		}
+
+		&:after {
+			opacity: 0;
+			content: attr(data-text);
+			position: absolute;
+			top: -7px;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			color: $color-gold;
+			overflow: hidden;
+			transform: translate(-24px, 6px);
+			transition: transform 0.1s ease-out,
+			opacity 0.1s ease-out;
+		}
+
+		&:hover {
+			&:before {
+				left: 0;
+				right: auto;
+				width: 100%;
+			}
+
+			&:after {
+				opacity: 1;
+				padding: 0 20px;
+				transform: translate(0px, 6px);
+				transition: transform 0.2s 0.14s ease-out,
+				opacity 0.2s 0.14s ease-out;
+			}
+		}
+
+		.is-active & {
+			opacity: 1;
+			transform: translate3d(0,0,0);
+			transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+			@for $i from 1 to 5 {
+				&:nth-child(#{$i}) { transition-delay: $i * 0.1s + 0.65s; }
+			}
+		}
+	}
+
+	@include extra-small {
+		&__list {
+			font-size: 40px;
+		}
 	}
 
 	@include small {
 		position: static;
 		transform: none;
 		background-color: transparent;
+		height: auto;
 		width: 55%;
+		overflow: visible;
+		backface-visibility: visible;
+
+		&:before {
+			display: none;
+		}
 
 		&__list {
+			overflow: hidden;
+			position: static;
 			flex-direction: row;
 			border-bottom: none;
 			justify-content: space-evenly;
@@ -47,10 +147,63 @@
 			width: auto;
 			height: auto;
 			font-size: inherit;
+			backface-visibility: visible;
+			perspective: none;
+			transform: none;
 		}
 
 		&__item {
 			padding: 0;
+			opacity: 1;
+			transform: none;
+
+			&:before {
+				position: static;
+			}
+
+			&:after {
+				position: static;
+				content: "";
+				transform: none;
+			}
+
+			&:hover {
+				&:after {
+					opacity: 1;
+					padding: 0;
+					transform: none;
+					transition: none;
+				}
+			}
+		}
+
+		&__link {
+			position: relative;
+
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: -33px;
+				width: 100%;
+				height: 1px;
+				background-color: $color-white;
+				opacity: 0;
+				box-shadow: 0 0 12px $color-gold;
+				transition: bottom 0.4s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.5s;
+			}
+
+			&:hover:before {
+				bottom: -4px;
+				opacity: 1;
+				transition: bottom 0.4s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.4s;
+			}
+
+			&:hover {
+				transition: text-shadow 0.2s ease;
+				text-shadow: 0 0 12px $color-gold;
+			}
 		}
 	}
 

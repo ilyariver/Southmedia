@@ -2,5 +2,13 @@
 	&__container {
 		display: flex;
 		flex-direction: column;
+
+		transition: transform 0.2s ease-out;
+
+		.is-active & {
+			transform: scale(0.92);
+			overflow: hidden;
+			transition: transform 0.2s 0.41s ease-out;
+		}
 	}
 }

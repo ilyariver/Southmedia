@@ -1,20 +1,24 @@
 #group_1 {
 	z-index: 3;
 	transform: translateY(14rem);
+	transition: transform 0.5s ease;
 }
 
 #group_2 {
 	transform: translateY(95rem);
+	transition: transform 0.5s ease;
 	z-index: 2;
 }
 
 #group_3 {
-	transform: translateY(120rem);
+	transform: translateY(215rem);
+	transition: transform 0.5s ease;
 	z-index: 1;
 }
 
 #group_4 {
-	transform: translateY(210rem);
+	transform: translateY(310rem);
+	transition: transform 0.5s ease;
 	z-index: 2;
 }
 
@@ -22,17 +26,42 @@
 	transform: translateY(320rem);
 }
 
+@include iphone7 {
+	#group_1 {
+		transform: translateY(18rem);
+	}
+
+	#group_3 {
+		transform: translateY(205rem);
+	}
+
+	#group_4 {
+		transform: translateY(280rem);
+	}
+}
+
+@include iphone7plus {
+	#group_3 {
+		transform: translateY(230rem);
+	}
+
+	#group_4 {
+		transform: translateY(340rem);
+	}
+}
+
+
 @include extra-small {
 	#group_1 {
 		transform: translateY(220px);
 	}
 
 	#group_3 {
-		transform: translateY(2255px);
+		transform: translateY(3790px);
 	}
 
 	#group_4 {
-		transform: translateY(2640px);
+		transform: translateY(4410px);
 	}
 
 	#group_5 {
@@ -42,28 +71,55 @@
 
 @include small {
 	#group_1 {
-		transform: translateY(370px);
+		transform: translateY(350px);
+	}
+
+	#group_2 {
+		transform: translateY(85rem);
 	}
 
 	#group_3 {
-		transform: translateY(2225px);
+		transform: translateY(4650px);
+	}
+
+	#group_4 {
+		transform: translateY(5880px);
 	}
 }
 
 @include medium {
 	#group_1 {
-		transform: translateY(180px);
+		transform: translateY(90px);
+	}
+
+	#group_2 {
+		transform: translateY(4530px);
 	}
 
 	#group_3 {
-		transform: translateY(3200px);
+		transform: translateY(2190px);
 	}
 
 	#group_4 {
-		transform: translateY(4340px);
+		transform: translateY(3090px);
 	}
 
 	#group_5 {
 		transform: translateY(6470px);
+	}
+}
+
+@include large {
+	#group_1 {
+		transform: translateY(180px);
+	}
+
+	#group_3 {
+		transform: translateY(4170px);
+	}
+
+	#group_4 {
+		transform: translateY(5670px);
+		transition: transform 0.1s ease;
 	}
 }

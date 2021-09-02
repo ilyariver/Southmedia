@@ -11,17 +11,17 @@
 
 		&:nth-child(2) {
 			& .parallax__layer--back {
-				transform: translateZ(-1px) scale(2) translateY(-20rem);
+				transform: translateZ(-1px) scale(2) translateY(0);
 			}
 
 			& .parallax__layer--base {
-				transform: translateZ(0) translateY(-8rem);
+				transform: translateZ(0) translateY(50rem);
 			}
 		}
 
 		&:nth-child(3) {
 			& .parallax__layer--back:first-child {
-				transform: translateZ(-1px) scale(2) translateY(-21px);
+				transform: translateZ(-1px) scale(2) translateY(-76px);
 			}
 		}
 
@@ -52,11 +52,46 @@
 		&__group {
 			&:nth-child(2) {
 				& .parallax__layer--back {
-					transform: translateZ(-1px) scale(2) translateY(-25rem);
+					transform: translateZ(-1px) scale(2) translateY(0);
 				}
 
 				& .parallax__layer--base {
-					transform: translateZ(0) translateY(-10rem);
+					transform: translateZ(0) translateY(-50rem);
+				}
+			}
+		}
+	}
+
+	@include iphone7 {
+		&__group {
+
+			&:nth-child(2) {
+				& .parallax__layer--back {
+					transform: translateZ(-1px) scale(2) translateY(0);
+				}
+
+				& .parallax__layer--base {
+					transform: translateZ(0) translateY(50rem);
+				}
+			}
+		}
+	}
+
+	@include extra-small {
+		&__group {
+			&:nth-child(2) {
+				& .parallax__layer--back {
+					transform: translateZ(-1px) scale(2) translateY(-13rem);
+				}
+
+				& .parallax__layer--base {
+					transform: translateZ(0) translateY(20rem);
+				}
+			}
+
+			&:nth-child(3) {
+				& .parallax__layer--back:first-child {
+					transform: translateZ(-1px) scale(2) translateY(-108px);
 				}
 			}
 		}
@@ -66,11 +101,17 @@
 		&__group {
 			&:nth-child(2) {
 				& .parallax__layer--back {
-					transform: translateZ(-1px) scale(2) translateY(-810px);
+					transform: translateZ(-1px) scale(2) translateY(-130px);
 				}
 
 				& .parallax__layer--base {
-					transform: translateZ(0) translateY(-820px);
+					transform: translateZ(0) translateY(750px);
+				}
+			}
+
+			&:nth-child(3) {
+				& .parallax__layer--back:first-child {
+					transform: translateZ(-1px) scale(2) translateY(-132px);
 				}
 			}
 		}
@@ -80,17 +121,17 @@
 		&__group {
 			&:nth-child(2) {
 				& .parallax__layer--back {
-					transform: translateZ(-1px) scale(2) translateY(-1866px);
+					transform: translateZ(-1px) scale(2) translateY(-1826px);
 				}
 
 				& .parallax__layer--base {
-					transform: translateZ(0) translateY(-2250px);
+					transform: translateZ(0) translateY(-2870px);
 				}
 			}
 
 			&:nth-child(3) {
 				& .parallax__layer--back:first-child {
-					transform: translateZ(-1px) scale(2) translateY(-44px);
+					transform: translateZ(-1px) scale(2) translateY(-161px);
 				}
 			}
 
@@ -102,9 +143,30 @@
 		}
 
 		@include large {
-			&:nth-child(3) {
-				& .parallax__layer--back:first-child {
-					transform: translateZ(-1px) scale(2) translateY(-21px);
+			&__group {
+				&:nth-child(2) {
+					& .parallax__layer--back {
+						transform: translateZ(-1px) scale(2) translateY(-1576px);
+						transition: transform 1s ease-in;
+					}
+
+					& .parallax__layer--base {
+						transform: translateZ(0) translateY(-1940px);
+						transition: transform 1s ease-in;
+					}
+				}
+
+				&:nth-child(3) {
+					& .parallax__layer--back:first-child {
+						transform: translateZ(-1px) scale(2) translateY(-196px);
+						transition: transform 1s ease-in;
+					}
+				}
+
+				&:nth-child(4) {
+					& .parallax__layer--base:last-child {
+						transition: transform 1s ease-in;
+					}
 				}
 			}
 		}

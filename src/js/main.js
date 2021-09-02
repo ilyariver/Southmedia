@@ -5,6 +5,7 @@ import './components/header';
 import './components/ticker';
 import './components/sliders';
 import './components/parallax';
+import './components/animate';
 import {ieFix} from './vendor/ie-fix';
 import {vhFix} from './vendor/vh-fix';
 import {actualYear} from './modules/actualYear';

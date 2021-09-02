@@ -1,6 +1,5 @@
 .section-recipes {
 	width: 100%;
-	margin-bottom: 80px;
 
 	&__container {
 		border-bottom: 1px solid $color-white;
@@ -8,10 +7,10 @@
 
 	&__recipes {
 		position: relative;
-		height: 30rem;
+		height: 28rem;
 		border-right: 1px solid #F7F6F2;
 		border-left: 1px solid #F7F6F2;
-		padding: 30px 20px 0;
+		padding: 5px 20px 0;
 	}
 
 	&__figcaption {
@@ -81,9 +80,13 @@
 	}
 
 	@include extra-small {
+		height: 285px;
+		border-bottom: 1px solid $color-white;
+
 		&__container {
 			display: flex;
 			width: 670px;
+			border: none;
 		}
 
 		&__recipes {
@@ -94,7 +97,7 @@
 		}
 
 		&__gigcaption {
-			padding-top: 20px;
+			padding-top: 80px;
 		}
 
 		&__index {
@@ -110,7 +113,8 @@
 		}
 
 		&__wrap {
-			padding-top: 40px;
+			padding-top: 50px;
+			padding-bottom: 50px;
 			width: calc(100% / 2 + 20px);
 		}
 
@@ -124,6 +128,8 @@
 	}
 
 	@include small {
+		height: 378px;
+
 		&__container {
 			width: 800px;
 		}
@@ -133,7 +139,40 @@
 		}
 
 		&__index {
-			margin-bottom: 30px;
+			margin-bottom: 15px;
+			font-size: 24px;
+		}
+
+		&__title {
+			margin: 0 0 30px 0;
+			font-size: 30px;
+		}
+
+		&__text {
+			font-size: 10px;
+		}
+
+		&__wrap {
+			padding: 80px 0;
+		}
+
+		&__item {
+			padding: 0 30px;
+		}
+	}
+
+	@include medium {
+		height: 455px;
+
+		&__container {
+			width: 1010px;
+		}
+		&__figcaption {
+			padding-top: 60px;
+		}
+
+		&__index {
+			margin-bottom: 23px;
 			font-size: 24px;
 		}
 
@@ -155,42 +194,20 @@
 		}
 	}
 
-	@include medium {
-		&__container {
-			width: 1010px;
-		}
-		&__figcaption {
-			padding-top: 120px;
-		}
-
-		&__index {
-			margin-bottom: 23px;
-			font-size: 24px;
-		}
-
-		&__title {
-			margin: 0 0 30px 0;
-			font-size: 40px;
-		}
-
-		&__text {
-			font-size: 10px;
-		}
-
-		&__wrap {
-			padding: 160px 0;
-		}
-
-		&__item {
-			padding: 0 30px;
-		}
-	}
-
 	@include large {
+		height: 600px;
 		margin-bottom: 250px;
 
 		&__container {
 			width: 1295px;
+		}
+
+		&__wrap {
+			padding: 160px 0 30px;
+		}
+
+		&__figcaption {
+			padding-top: 120px;
 		}
 
 		&__title {

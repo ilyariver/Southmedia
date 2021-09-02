@@ -1,14 +1,16 @@
 .section-ticker {
 	width: 100%;
 	overflow: hidden;
+	border-top: 1px solid $color-white;
+	border-bottom: 1px solid $color-white;
+	height: 40px;
 
 	&__text {
 		display: flex;
 		text-transform: uppercase;
 		padding: 10px 0;
 		font-size: 16px;
-		border-top: 1px solid $color-white;
-		border-bottom: 1px solid $color-white;
+		transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1);
 
 		& > * {
 			display: flex;
@@ -32,7 +34,17 @@
 		}
 	}
 
+	@include extra-small {
+		height: 51px;
+
+		&__text {
+			padding: 15px 0;
+		}
+	}
+
 	@include medium {
+		height: 62px;
+
 		&__text {
 			padding: 17px 0;
 			font-size: 24px;

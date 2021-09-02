@@ -4,6 +4,18 @@
 	}
 }
 
+@mixin iphone7 {
+	@media (min-width: 375px) {
+		@content;
+	}
+}
+
+@mixin iphone7plus {
+	@media (min-width: 414px) {
+		@content;
+	}
+}
+
 @mixin intermediate-s {
 	@media (min-width: 420px) {
 		@content;
