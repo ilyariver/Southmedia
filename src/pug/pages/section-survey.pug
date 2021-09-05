@@ -1,13 +1,13 @@
 section(data-section="sixth").section-survey.parallax__layer.parallax__layer--base
 	.container.section-survey__container
 		.section-survey__wrap
-			h4.section-survey__title
+			h4.section-survey__title.js-section-survey-title
 				| Получи#[br]любимую
-			p.section-survey__text
+			p.section-survey__text.js-section-survey-text
 				| Ответь на несколько вопросов о тебе #[br]
 				| и гречке и получи небольшой бонус от нас
 
-			.section-survey__state-answers
+			.section-survey__state-answers.js-state-answers
 				.section-survey__step
 					| 00
 				.section-survey__step
@@ -21,5 +21,7 @@ section(data-section="sixth").section-survey.parallax__layer.parallax__layer--ba
 
 			.section-survey__questions
 				include ../pages/question
+
+	include ../pages/section-ticker-soc
 
 

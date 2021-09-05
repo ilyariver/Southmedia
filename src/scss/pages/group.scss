@@ -11,7 +11,7 @@
 }
 
 #group_3 {
-	transform: translateY(215rem);
+	transform: translateY(245rem);
 	transition: transform 0.5s ease;
 	z-index: 1;
 }
@@ -23,7 +23,7 @@
 }
 
 #group_5 {
-	transform: translateY(320rem);
+	transform: translateY(450rem);
 }
 
 @include iphone7 {
@@ -32,11 +32,15 @@
 	}
 
 	#group_3 {
-		transform: translateY(205rem);
+		transform: translateY(235rem);
 	}
 
 	#group_4 {
-		transform: translateY(280rem);
+		transform: translateY(310rem);
+	}
+
+	#group_5 {
+		transform: translateY(440rem);
 	}
 }
 
@@ -46,7 +50,11 @@
 	}
 
 	#group_4 {
-		transform: translateY(340rem);
+		transform: translateY(315rem);
+	}
+
+	#group_5 {
+		transform: translateY(440rem);
 	}
 }
 
@@ -61,11 +69,11 @@
 	}
 
 	#group_4 {
-		transform: translateY(4410px);
+		transform: translateY(4260px);
 	}
 
 	#group_5 {
-		transform: translateY(4280px);
+		transform: translateY(5500px);
 	}
 }
 
@@ -75,7 +83,7 @@
 	}
 
 	#group_2 {
-		transform: translateY(85rem);
+		transform: translateY(80rem);
 	}
 
 	#group_3 {
@@ -83,7 +91,11 @@
 	}
 
 	#group_4 {
-		transform: translateY(5880px);
+		transform: translateY(4970px);
+	}
+
+	#group_5 {
+		transform: translateY(6830px);
 	}
 }
 
@@ -97,15 +109,15 @@
 	}
 
 	#group_3 {
-		transform: translateY(2190px);
+		transform: translateY(3010px);
 	}
 
 	#group_4 {
-		transform: translateY(3090px);
+		transform: translateY(2690px);
 	}
 
 	#group_5 {
-		transform: translateY(6470px);
+		transform: translateY(4800px);
 	}
 }
 
@@ -119,7 +131,12 @@
 	}
 
 	#group_4 {
-		transform: translateY(5670px);
+		transform: translateY(4270px);
+		transition: transform 0.1s ease;
+	}
+
+	#group_5 {
+		transform: translateY(6670px);
 		transition: transform 0.1s ease;
 	}
 }

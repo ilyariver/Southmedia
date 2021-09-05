@@ -19,12 +19,14 @@
 		text-transform: uppercase;
 		font-weight: 400;
 		font-size: 4rem;
+		overflow: hidden;
 	}
 
 	&__text {
 		margin-bottom: 2rem;
 		font-family: "SFProDisplay";
 		font-size: 1.4rem;
+		overflow: hidden;
 	}
 
 	&__state-answers {
@@ -49,6 +51,10 @@
 	&__step {
 		font-size: 1.4rem;
 
+		&:first-child {
+			visibility: hidden;
+		}
+
 		&--cold {
 			color: $color-gold;
 		}
@@ -59,6 +65,24 @@
 		flex-direction: column;
 		align-items: center;
 		position: relative;
+		width: 100%;
+	}
+
+	&__ticker {
+		transform: translateY(21rem);
+	}
+
+	&__ticker-link span {
+		background-image: url("../images/arrow-down.svg");
+		background-repeat: no-repeat;
+		background-position: center right;
+		padding-right: 30px;
+		transition: background-image 0.2s;
+
+		&:hover {
+			background-image: url("../images/arrow-gold-down.svg");
+			transition: background-image 0.2s;
+		}
 	}
 
 	@include intermediate {
@@ -79,11 +103,21 @@
 		&__step {
 			font-size: 24px
 		}
+
+		&__ticker {
+			transform: translateY(16rem);
+		}
 	}
 
 	@include small {
 		&__text {
 			font-size: 15px;
+		}
+
+		&__ticker-link {
+			&:hover {
+				color: $color-gold;
+			}
 		}
 	}
 
@@ -101,11 +135,15 @@
 		&__state-answers {
 			width: 930px;
 		}
+
+		&__ticker {
+			transform: translateY(350px);
+		}
 	}
 
 	@include large {
 		&__text {
-			margin-bottom: 107px;
+			margin-bottom: 50px;
 		}
 
 		&__state-answers {

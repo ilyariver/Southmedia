@@ -1,31 +1,31 @@
-article.question.js-question
-	h5.question__title
+article.question.active-qstn.js-question
+	h5.question__title.js-question-title
 		| Насколько ты#[br]
 		| любишь гречу?
 
 	ul.question__answer-options
-		li.question__option
-			button(type="button" data-action="0").btn.question__btn
+		li.question__option.js-qstn-optn
+			button(type="button" data-action="0").btn.question__btn.js-button-like
 				span
 					| 0
-		li.question__option
-			button(type="button" data-action="1-3").btn.question__btn
+		li.question__option.js-qstn-optn
+			button(type="button" data-action="1-3").btn.question__btn.js-button-like
 				span
 					| 1-3
-		li.question__option
-			button(type="button" data-action="4-6").btn.question__btn
+		li.question__option.js-qstn-optn
+			button(type="button" data-action="4-6").btn.question__btn.js-button-like
 				span
 					| 4-6
-		li.question__option
-			button(type="button" data-action="7-9").btn.question__btn
+		li.question__option.js-qstn-optn
+			button(type="button" data-action="7-9").btn.question__btn.js-button-like
 				span
 					| 7-9
-		li.question__option
+		li.question__option.js-qstn-optn
 			button(
 				type="button"
 				aria-label="лайк"
 				data-action="like"
-				).btn.question__btn.question__btn--heart
+				).btn.question__btn.question__btn--heart.js-button-like
 
 				img(src="." +
 				"/images/heart.svg" alt="сердце")
@@ -54,19 +54,19 @@ article.question.js-question
 		| гречи?
 
 	ul.question__answer-options
-		li.question__option
+		li.question__option.js-qstn-optn
 			button(type="button" data-action="breakfast").btn.question__btn
 				span
 					| Завтрак
-		li.question__option
+		li.question__option.js-qstn-optn
 			button(type="button" data-action="dinner").btn.question__btn
 				span
 					| Обед
-		li.question__option
+		li.question__option.js-qstn-optn
 			button(type="button" data-action="supper").btn.question__btn
 				span
 					| Ужин
-		li.question__option
+		li.question__option.js-qstn-optn
 			button(type="button" data-action="nightOvereating").btn.question__btn
 				span
 					| Ночной дожор

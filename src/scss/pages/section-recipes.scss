@@ -80,7 +80,7 @@
 	}
 
 	@include extra-small {
-		height: 285px;
+		height: 337px;
 		border-bottom: 1px solid $color-white;
 
 		&__container {
@@ -128,7 +128,7 @@
 	}
 
 	@include small {
-		height: 378px;
+		height: 429px;
 
 		&__container {
 			width: 800px;
@@ -162,7 +162,7 @@
 	}
 
 	@include medium {
-		height: 455px;
+		height: 467px;
 
 		&__container {
 			width: 1010px;
@@ -186,7 +186,7 @@
 		}
 
 		&__wrap {
-			padding: 80px 0;
+			padding: 80px 0 30px;
 		}
 
 		&__item {
@@ -195,7 +195,7 @@
 	}
 
 	@include large {
-		height: 600px;
+		height: 663px;
 		margin-bottom: 250px;
 
 		&__container {

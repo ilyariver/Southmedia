@@ -3,6 +3,11 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+	z-index: 1;
+
+	&.active-qstn {
+		z-index: 5;
+	}
 
 	&:not(:first-child) {
 		opacity: 0;
@@ -12,6 +17,7 @@
 		text-transform: uppercase;
 		font-size: 2.5rem;
 		font-weight: 400;
+		overflow: hidden;
 	}
 
 	&__answer-options {
@@ -99,8 +105,6 @@
 	}
 
 	@include extra-small {
-		width: 70%;
-
 		&__title {
 			font-size: 28px;
 		}
@@ -136,6 +140,21 @@
 
 			&:not(:last-child) {
 				margin-bottom: 10px;
+			}
+		}
+	}
+
+	@include small {
+		&__btn {
+			cursor: pointer;
+
+			&:hover {
+				background-color: $color-black;
+				box-shadow: 0 0 30px $color-gold;
+			}
+
+			&:active {
+				border: 1px solid $color-gold;
 			}
 		}
 	}
